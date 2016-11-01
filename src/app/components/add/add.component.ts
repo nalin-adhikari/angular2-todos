@@ -21,6 +21,8 @@ export class AddComponent implements OnInit {
 
   onAddItem(item){
   	console.log(item);
+    this.storeService.addTodos(item);
+    this.storeService.getTodos();
   }
 
 }
