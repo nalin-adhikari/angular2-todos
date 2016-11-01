@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StoreService } from '../../services/store/store.service';
+import { Todo } from '../../domain/todo';
 
 @Component({
   selector: 'app-display',
@@ -8,7 +9,7 @@ import { StoreService } from '../../services/store/store.service';
 })
 export class DisplayComponent implements OnInit {
 
-	todos: string [];
+	todos: Todo [];
 	storeService: StoreService;
 
   constructor(storeService: StoreService) {
@@ -19,7 +20,7 @@ export class DisplayComponent implements OnInit {
   	this.todos = this.onGetItem();
   }
 
-  onGetItem(): string []{
+  onGetItem(): Todo []{
   	return this.storeService.getTodos();
   }
 

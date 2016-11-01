@@ -1,5 +1,5 @@
 <div>
 	<ul>
-		<li *ngFor="let item of todos">{{item}}<button type="">EDIT</button><button (click)="onDeleteItem(item)">DELETE</button></li>
+		<li *ngFor="let item of todos">{{item.title}}<button type="">EDIT</button><button (click)="onDeleteItem(item.id)">DELETE</button></li>
 	</ul>
 </div>
