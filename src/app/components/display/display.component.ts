@@ -23,4 +23,8 @@ export class DisplayComponent implements OnInit {
   	return this.storeService.getTodos();
   }
 
+  onDeleteItem(todoItem){
+	return this.storeService.deleteTodos(todoItem);
+  }
+
 }

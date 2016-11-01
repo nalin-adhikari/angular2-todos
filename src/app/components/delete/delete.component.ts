@@ -12,4 +12,8 @@ export class DeleteComponent implements OnInit {
   ngOnInit() {
   }
 
+  onDeleteItem(item){
+  	
+  }
+
 }
