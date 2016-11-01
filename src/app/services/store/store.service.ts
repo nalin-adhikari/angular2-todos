@@ -1,15 +1,18 @@
 import { Injectable } from '@angular/core';
+import { Todo } from '../../domain/todo';
 
 @Injectable()
 export class StoreService {
 
-  todos : string [];
+  todos : Todo [];
 
   constructor() {
-  	this.todos = ['My first todo.', 'My second todo.'];
+  	this.todos = [
+  		new Todo("1","abc")
+  	]
   }
 
-  getTodos(){
+  getTodos(): Todo []{
   	return this.todos;
   }
 
