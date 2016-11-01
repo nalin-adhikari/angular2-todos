@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { StoreService } from '../../services/store/store.service';
+import { Todo } from '../../domain/todo';
 
 @Component({
   selector: 'app-add',
@@ -20,7 +21,8 @@ export class AddComponent implements OnInit {
   }
 
   onAddItem(item){
-    this.storeService.addTodos(item);
+    var todo = new Todo(new Date().toDateString(),item);
+    this.storeService.addTodos(todo);
     this.storeService.getTodos();
   }
 
