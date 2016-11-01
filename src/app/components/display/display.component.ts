@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StoreService } from '../../services/store/store.service';
 
 @Component({
   selector: 'app-display',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DisplayComponent implements OnInit {
 
-  constructor() { }
+	todos: string [];
+	storeService: StoreService;
+
+  constructor(storeService: StoreService) {
+  	this.storeService = storeService;
+  }
 
   ngOnInit() {
+  	this.todos = this.onGetItem();
+  }
+
+  onGetItem(): string []{
+  	return this.storeService.getTodos();
   }
 
 }
