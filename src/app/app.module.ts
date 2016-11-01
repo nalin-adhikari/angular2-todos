@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { AddComponent } from './components/add/add.component';
 import { DisplayComponent } from './components/display/display.component';
 import { StoreService } from './services/store/store.service';
+import { DeleteComponent } from './components/delete/delete.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddComponent,
-    DisplayComponent
+    DisplayComponent,
+    DeleteComponent
   ],
   imports: [
     BrowserModule,

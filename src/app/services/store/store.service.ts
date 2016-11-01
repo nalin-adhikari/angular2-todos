@@ -21,4 +21,9 @@ export class StoreService {
   	console.log(this.todos);
   }
 
+  	deleteTodos(todo){
+  		console.log("Inside deleteTodos method.");
+  		console.log(this.todos.find(todo));
+  	}
+
 }
