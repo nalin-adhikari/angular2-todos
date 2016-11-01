@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { StoreService } from '../../services/store/store.service';
 
 @Component({
   selector: 'app-add',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddComponent implements OnInit {
 
-  constructor() { }
+  storeService: StoreService;
+  @Input() title: string;
+  
+
+  constructor(storeService: StoreService) {
+    this.storeService = storeService;
+  }
 
   ngOnInit() {
+  }
+
+  onAddItem(item){
+  	console.log(item);
   }
 
 }
