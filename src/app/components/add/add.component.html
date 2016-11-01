@@ -1,4 +1,4 @@
 <div>
-	<input type="text" id="title" value="" placeholder="Enter the todo title." />
-	<button type="">ADD</button>
+	<input [(ngModel)]="title" placeholder="Enter the todo title." />
+	<button (click)="onAddItem(title)">ADD</button>
 </div>
