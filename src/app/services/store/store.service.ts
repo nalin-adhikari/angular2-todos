@@ -15,4 +15,10 @@ export class StoreService {
   	return this.todos;
   }
 
+  addTodos(todo){
+  	console.log("Inside addTodos method.");
+  	this.todos.push(todo);
+  	console.log(this.todos);
+  }
+
 }
