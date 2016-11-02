@@ -22,9 +22,8 @@ export class AddComponent implements OnInit {
   }
 
   onAddItem(item){
-    console.log(Uuid.generate());
-    var todo = new Todo(new Date().toDateString(),item);
-    this.storeService.addTodos(todo);
+    //var todo = new Todo(item);
+    this.storeService.addTodos(item);
     this.storeService.getTodos();
   }
 
