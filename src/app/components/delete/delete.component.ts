@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StoreService } from '../../services/store/store.service';
 
 @Component({
   selector: 'app-delete',
@@ -7,13 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DeleteComponent implements OnInit {
 
-  constructor() { }
+	storeService: StoreService;
+
+  constructor(storeService: StoreService) {
+  	this.storeService = storeService;
+  }
 
   ngOnInit() {
   }
 
-  onDeleteItem(item){
-  	
+  onDeleteItem(todo){
+  	this.storeService.deleteTodos(todo);
   }
 
 }
