@@ -1,19 +1,9 @@
 export class Todo {
 
-	id: string;
 	title: string;
 
-	constructor(id,title){
-		this.id = id;
+	constructor(title){
 		this.title = title;
-	}
-
-	getId():string{
-		return this.id;
-	}
-
-	setId(id){
-		this.id = id;
 	}
 
 	getTitle():string{
@@ -25,6 +15,6 @@ export class Todo {
 	}
 
 	toString(){
-		return "id = "+this.id+" , title = "+this.title;
+		return "title = "+this.title;
 	}
 }
