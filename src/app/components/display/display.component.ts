@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StoreService } from '../../services/store/store.service';
 import { Todo } from '../../domain/todo';
+import { DeleteComponent } from '../delete/delete.component';
 
 @Component({
   selector: 'app-display',
@@ -9,8 +10,9 @@ import { Todo } from '../../domain/todo';
 })
 export class DisplayComponent implements OnInit {
 
-	todos: Todo [];
+	todos: string [];
 	storeService: StoreService;
+	deleteComponent: DeleteComponent;
 
   constructor(storeService: StoreService) {
   	this.storeService = storeService;
@@ -20,12 +22,13 @@ export class DisplayComponent implements OnInit {
   	this.todos = this.onGetItem();
   }
 
-  onGetItem(): Todo []{
+  onGetItem(): string []{
   	return this.storeService.getTodos();
   }
 
-  onDeleteItem(todoItem){
-	return this.storeService.deleteTodos(todoItem);
+  onDeleteItem(todo){
+  	this.storeService.deleteTodos(todo);
+	  this.storeService.getTodos();
   }
 
 }
