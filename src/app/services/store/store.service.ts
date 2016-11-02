@@ -1,27 +1,32 @@
 import { Injectable } from '@angular/core';
 import { Todo } from '../../domain/todo';
+import { Uuid } from '../../utils/uuid';
+import { Array } from '../../utils/array';
 
 @Injectable()
 export class StoreService {
 
-  todos : Todo [];
+  todos : string [];
 
   constructor() {
   	this.todos = [
-  		new Todo("1","abc")
+  		'This is test todo task'
   	]
   }
 
-  getTodos(): Todo []{
+  getTodos(): string []{
   	return this.todos;
   }
 
   addTodos(todo){
-  	this.todos.push(todo);
+    this.todos.splice(0,0,todo);
   }
 
   deleteTodos(todo){
-  	console.log(todo);
+    var i = this.todos.indexOf(todo);
+    if(i != -1) {
+      this.todos.splice(i, 1);
+    }
   }
 
 }
